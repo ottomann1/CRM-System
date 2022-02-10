@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1100.0" style="-fx-background-color: #f4f5f5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.crmsystem.MenuController">
+   <children>
+      <StackPane layoutX="300.0" layoutY="116.0" prefHeight="684.0" prefWidth="800.0">
+         <children>
+            <GridPane fx:id="repGrid" layoutX="10.0" layoutY="10.0" prefHeight="676.0" prefWidth="788.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="231.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="623.0" minHeight="10.0" prefHeight="623.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;" />
+                  <TableView fx:id="tableviewRep" prefHeight="469.0" prefWidth="788.0" GridPane.rowIndex="1">
+                     <columns>
+                        <TableColumn fx:id="tableColumnIdRep" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="tableColumnNameRep" prefWidth="240.0" text="Name" />
+                        <TableColumn fx:id="tableColumnAddressRep" minWidth="0.0" prefWidth="268.0" text="Address" />
+                        <TableColumn fx:id="tableColumnTOCRep" prefWidth="216.0" text="Time of creation" />
+                     </columns>
+                  </TableView>
+               </children>
+            </GridPane>
+            <GridPane fx:id="saleGrid" layoutX="10.0" layoutY="10.0" prefHeight="676.0" prefWidth="788.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="231.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="623.0" minHeight="10.0" prefHeight="623.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView fx:id="tableviewSale" prefHeight="469.0" prefWidth="788.0" GridPane.rowIndex="1">
+                     <columns>
+                        <TableColumn fx:id="tableColumnIdSale" prefWidth="75.0" text="ID" />
+                        <TableColumn fx:id="tableColumnProductNameSale" prefWidth="179.0" text="Product" />
+                        <TableColumn fx:id="tableColumnAmountSale" minWidth="0.0" prefWidth="56.0" text="Amount" />
+                        <TableColumn fx:id="tableColumnSellerSale" prefWidth="120.0" text="Seller" />
+                        <TableColumn fx:id="tableColumnBuyerSale" prefWidth="142.0" text="Buyer" />
+                        <TableColumn fx:id="tableColumnTOSSale" prefWidth="227.0" text="Time Of Sale" />
+                     </columns>
+                  </TableView>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;" />
+               </children>
+            </GridPane>
+            <GridPane fx:id="registerSaleGrid" layoutX="10.0" layoutY="10.0" prefHeight="682.0" prefWidth="798.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane fx:id="registerSalePane" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <TextField fx:id="textProductName" layoutX="154.0" layoutY="86.0" prefHeight="35.0" prefWidth="600.0" promptText="Enter product name..." />
+                        <Button fx:id="buttonRegisterActualSale" layoutX="265.0" layoutY="472.0" mnemonicParsing="false" onAction="#buttonRegisterSaleClicked" prefHeight="70.0" prefWidth="253.0" text="Register" />
+                        <Text layoutX="51.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="53.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textProductAmount" layoutX="154.0" layoutY="128.0" prefHeight="35.0" prefWidth="600.0" promptText="Enter product amount..." />
+                        <Text layoutX="76.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Seller:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="75.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buyer:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                        <ChoiceBox fx:id="choiceSeller" layoutX="154.0" layoutY="172.0" prefHeight="35.0" prefWidth="600.0" />
+                        <ChoiceBox fx:id="choiceBuyer" layoutX="154.0" layoutY="213.0" prefHeight="35.0" prefWidth="600.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="registerCustomerGrid" layoutX="10.0" layoutY="10.0" prefHeight="682.0" prefWidth="798.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane fx:id="registerSalePane1" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <TextField fx:id="inputCustomerName" layoutX="154.0" layoutY="86.0" prefHeight="35.0" prefWidth="600.0" promptText="Enter customer name..." />
+                        <Button fx:id="buttonRegisterActualCustomer" layoutX="265.0" layoutY="472.0" mnemonicParsing="false" onAction="#buttonRegisterCustomerClicked" prefHeight="70.0" prefWidth="253.0" text="Register" />
+                        <Text layoutX="51.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="71.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="inputCustomerAddress" layoutX="154.0" layoutY="128.0" prefHeight="35.0" prefWidth="600.0" promptText="Enter customer address..." />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="customerHistoryGrid" layoutX="10.0" layoutY="10.0" prefHeight="614.0" prefWidth="800.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <TextArea fx:id="textfieldCustomerHistory" layoutX="13.0" layoutY="68.0" prefHeight="602.0" prefWidth="774.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+            <GridPane fx:id="graphProductGrid" layoutX="10.0" layoutY="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <LineChart fx:id="graphProduct" alternativeColumnFillVisible="true" layoutX="1.0" prefHeight="684.0" prefWidth="800.0" title=" ">
+                           <xAxis>
+                              <NumberAxis forceZeroInRange="false" label="Date" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="Amount" side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <Button layoutX="590.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphProductClearButton" prefHeight="35.0" prefWidth="95.0" text="Clear graph" />
+                        <Button layoutX="705.0" layoutY="2.0" mnemonicParsing="false" onAction="#ExportProductsClicked" prefHeight="35.0" prefWidth="81.0" text="Export" />
+                        <Button layoutX="65.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphProductHourMinuteButton" prefHeight="35.0" prefWidth="101.0" text="Hour/minute" />
+                        <Button layoutX="189.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphProductMonthButton" prefHeight="35.0" prefWidth="95.0" text="Per month" />
+                        <Button layoutX="305.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphProductYearButton" prefHeight="35.0" prefWidth="95.0" text="Per day" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="graphRepGrid" layoutX="10.0" layoutY="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <LineChart fx:id="graphRep" alternativeColumnFillVisible="true" layoutX="1.0" prefHeight="684.0" prefWidth="800.0" title=" ">
+                           <xAxis>
+                              <NumberAxis forceZeroInRange="false" label="Date" side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis label="Amount" side="LEFT" />
+                           </yAxis>
+                        </LineChart>
+                        <Button layoutX="593.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphRepClearButton" prefHeight="35.0" prefWidth="95.0" text="Clear graph" />
+                        <Button layoutX="65.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphRepHourMinuteButton" prefHeight="35.0" prefWidth="101.0" text="Hour/minute" />
+                        <Button layoutX="189.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphRepMonthButton" prefHeight="35.0" prefWidth="95.0" text="Per month" />
+                        <Button layoutX="306.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphRepYearButton" prefHeight="35.0" prefWidth="95.0" text="Per day" />
+                        <Button layoutX="705.0" layoutY="2.0" mnemonicParsing="false" onAction="#ExportRepsClicked" prefHeight="35.0" prefWidth="81.0" text="Export" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="graphCustomerGrid">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <LineChart fx:id="graphCustomer" alternativeColumnFillVisible="true" layoutX="1.0" prefHeight="684.0" prefWidth="800.0" title=" ">
+                          <xAxis>
+                            <NumberAxis fx:id="customerXAxis" forceZeroInRange="false" label="Date" side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="customerYAxis" label="Amount" side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button layoutX="590.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphCustomerClearButton" prefHeight="35.0" prefWidth="95.0" text="Clear graph" />
+                        <Button layoutX="65.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphCustomerHourMinuteButton" prefHeight="35.0" prefWidth="101.0" text="Hour/minute" />
+                        <Button layoutX="189.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphCustomerMonthButton" prefHeight="35.0" prefWidth="95.0" text="Per month" />
+                        <Button layoutX="305.0" layoutY="2.0" mnemonicParsing="false" onAction="#graphCustomerYearButton" prefHeight="35.0" prefWidth="95.0" text="Per day" />
+                        <Button layoutX="705.0" layoutY="2.0" mnemonicParsing="false" onAction="#ExportCustomersClicked" prefHeight="35.0" prefWidth="81.0" text="Export" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="ExportProductGrid" layoutX="10.0" layoutY="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <Text layoutX="149.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textProductExportTitle" layoutX="206.0" layoutY="52.0" prefHeight="25.0" prefWidth="388.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="144.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intro:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="textProductExportIntro" layoutX="206.0" layoutY="107.0" prefHeight="200.0" prefWidth="388.0" />
+                        <CheckBox fx:id="textProductExportRepCheckbox" layoutX="243.0" layoutY="318.0" mnemonicParsing="false" text="Include representative in report">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <Button layoutX="206.0" layoutY="464.0" mnemonicParsing="false" onAction="#ProductExportClicked" prefHeight="89.0" prefWidth="388.0" text="EXPORT REPORT" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="ExportRepGrid" layoutX="10.0" layoutY="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <Text layoutX="149.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textRepExportTitle" layoutX="206.0" layoutY="52.0" prefHeight="25.0" prefWidth="388.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="144.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intro:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="textRepExportIntro" layoutX="206.0" layoutY="107.0" prefHeight="200.0" prefWidth="388.0" />
+                        <CheckBox fx:id="textRepExportRepCheckbox" layoutX="243.0" layoutY="327.0" mnemonicParsing="false" text="Include representative in report">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <Button layoutX="206.0" layoutY="464.0" mnemonicParsing="false" onAction="#repExportClicked" prefHeight="89.0" prefWidth="388.0" text="EXPORT REPORT" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="graphGrid">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <Button layoutX="96.0" layoutY="320.0" mnemonicParsing="false" onAction="#graphButtonCustomer" text="Customer">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Text layoutX="248.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Get sales over time for:">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="96.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="graphTextfieldCustomer" layoutX="120.0" layoutY="367.0" prefHeight="25.0" prefWidth="83.0" />
+                        <Button layoutX="322.0" layoutY="320.0" mnemonicParsing="false" onAction="#graphButtonRep" text="Representative">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Text layoutX="344.0" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="graphTextfieldRep" layoutX="368.0" layoutY="367.0" prefHeight="25.0" prefWidth="83.0" />
+                        <Button layoutX="588.0" layoutY="320.0" mnemonicParsing="false" onAction="#graphButtonProduct" text="Product">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Text layoutX="544.0" layoutY="387.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="graphTextfieldProduct" layoutX="602.0" layoutY="366.0" prefHeight="25.0" prefWidth="126.0" />
+                        <ChoiceBox fx:id="textCustomerIdChoicebox" layoutX="120.0" layoutY="365.0" prefHeight="25.0" prefWidth="83.0" />
+                        <ChoiceBox fx:id="textRepIdChoicebox" layoutX="368.0" layoutY="367.0" prefHeight="25.0" prefWidth="83.0" />
+                        <ChoiceBox fx:id="textProductIdChoicebox" layoutX="601.0" layoutY="367.0" prefWidth="150.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="ExportCustomerGrid" layoutX="10.0" layoutY="10.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <Text layoutX="149.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="textCustomerExportTitle" layoutX="206.0" layoutY="52.0" prefHeight="25.0" prefWidth="388.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </TextField>
+                        <Text layoutX="144.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Intro:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="textCustomerExportIntro" layoutX="206.0" layoutY="107.0" prefHeight="200.0" prefWidth="388.0" />
+                        <CheckBox fx:id="textCustomerExportRepCheckbox" layoutX="243.0" layoutY="320.0" mnemonicParsing="false" text="Include representative in report">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </CheckBox>
+                        <Button layoutX="206.0" layoutY="464.0" mnemonicParsing="false" onAction="#customerExportClicked" prefHeight="89.0" prefWidth="388.0" text="EXPORT REPORT" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="activityGrid" layoutX="10.0" layoutY="10.0" prefHeight="614.0" prefWidth="800.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <TextArea fx:id="textfieldActivities" layoutX="13.0" layoutY="68.0" prefHeight="602.0" prefWidth="774.0" />
+                        <Button fx:id="buttonActivityIndex" layoutX="108.0" layoutY="15.0" mnemonicParsing="false" onAction="#buttonActivityIndexClicked" prefHeight="44.0" prefWidth="154.0" text="Delete activity from index" />
+                        <TextField fx:id="textfieldActivityIndex" layoutX="14.0" layoutY="15.0" prefHeight="44.0" prefWidth="83.0" promptText="Enter row..." />
+                        <Button fx:id="buttonActivityAll" layoutX="632.0" layoutY="15.0" mnemonicParsing="false" onAction="#buttonActivityAllClicked" prefHeight="44.0" prefWidth="154.0" text="Delete all activities" />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+            <GridPane fx:id="customerGrid" prefHeight="676.0" prefWidth="788.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="231.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="623.0" minHeight="10.0" prefHeight="623.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TableView fx:id="tableviewCustomer" prefHeight="469.0" prefWidth="788.0" GridPane.rowIndex="1">
+                    <columns>
+                      <TableColumn fx:id="tableColumnIdCustomer" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="tableColumnNameCustomer" prefWidth="240.0" text="Name" />
+                        <TableColumn fx:id="tableColumnAddressCustomer" minWidth="0.0" prefWidth="268.0" text="Address" />
+                        <TableColumn fx:id="tableColumnTOCCustomer" prefWidth="216.0" text="Time of creation" />
+                    </columns>
+                  </TableView>
+                  <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d7dee1;">
+                     <children>
+                        <Button fx:id="buttonCustomerHistoryIndex" layoutX="632.0" layoutY="9.0" mnemonicParsing="false" onAction="#buttonCustomerHistoryIndexClicked" prefHeight="44.0" prefWidth="154.0" text="Get customer history" />
+                        <TextField fx:id="textfieldCustomerIndex" layoutX="543.0" layoutY="9.0" prefHeight="44.0" prefWidth="83.0" promptText="Enter ID..." />
+                     </children>
+                  </Pane>
+               </children>
+            </GridPane>
+         </children>
+      </StackPane>
+      <VBox prefHeight="800.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="300.0">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="300.0">
+                     <children>
+                        <Text fx:id="textWelcome" layoutX="2.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hello, " textAlignment="CENTER" wrappingWidth="295.13671875">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Button fx:id="buttonCustomers" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Customers">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonReps" layoutX="10.0" layoutY="210.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Representatives">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonSales" layoutX="10.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Sales">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonRegisterSale" layoutX="10.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Register Sale">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonRegisterCustomer" layoutX="10.0" layoutY="360.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Register Customer">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonActivity" layoutX="10.0" layoutY="410.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Activity List">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonGraphs" layoutX="10.0" layoutY="510.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Graphs">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="logOut" layoutX="10.0" layoutY="460.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #c9d2d6;" text="Log Out" textFill="#d31919">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="300.0" />
+         </children>
+      </VBox>
+      <Pane layoutX="300.0" prefHeight="118.0" prefWidth="800.0" style="-fx-background-color: #a3b3ba;">
+         <children>
+            <Text fx:id="topPaneText" layoutX="29.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customers">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
